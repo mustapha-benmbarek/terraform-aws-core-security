@@ -7,10 +7,9 @@ module "key-pairs" {
 /*Security Module | Network Access Control List (ACL)*/
 module "network-acls" {
   source            = "./modules/network-acl"
-  core-vpcs         = module.vpcs.ids
-  core-vpc-subnets  = module.vpc-subnets.ids
+  core-vpcs         = var.data-vpcs
+  core-vpc-subnets  = var.data-vpc-subnets
   core-network-acls = local.lst-network-acls
-
 }
 
 /*Security Module | Security Group
