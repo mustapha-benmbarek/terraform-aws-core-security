@@ -13,9 +13,10 @@ module "network-acls" {
 
 }
 
-/*Security Module | Security Group*/
+/*Security Module | Security Group
 module "security-groups" {
   source               = "./modules/security-group"
   core-vpcs            = module.vpcs.ids
   core-security-groups = local.lst-security-groups
 }
+*/
