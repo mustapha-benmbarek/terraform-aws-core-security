@@ -1,8 +1,8 @@
+/*Resource creation: Network Access Control List (ACL)*/
 resource "aws_network_acl" "this" {
   for_each   = var.core-network-acls
   vpc_id     = var.core-vpcs[each.value.vpc-name].id
   subnet_ids = [for s in each.value.subnets : var.core-vpc-subnets[s].id]
-
 
   dynamic "ingress" {
     for_each = each.value.ingress-rules
