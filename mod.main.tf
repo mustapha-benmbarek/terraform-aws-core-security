@@ -19,3 +19,9 @@ module "security-groups" {
   core-security-groups = local.lst-security-groups
 }
 */
+
+/*Security Module | ACM Public Certificate*/
+module "acm-public-certificate" {
+  source                       = "./modules/acm-public-certificate"
+  core-acm-public-certificates = local.lst-acm-public-certificates
+}
